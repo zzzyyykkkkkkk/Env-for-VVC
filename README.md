@@ -15,7 +15,6 @@ The Safeenv512.py module defines a custom Gym environment named Safe_PowerNetEnv
 | **Gym‑compatible environments** | `PowerNetEnv_IEEE123` (standard) & `Safe_PowerNetEnv_IEEE123` (with convex‑optimisation safety‑layer). |
 | **Data management** | `GeneralPowerDataManager` loads / cleans multi‑year load & PV CSVs, interpolates to 3‑min resolution and delivers training batches. |
 | **Pandapower network builder** | `create_pandapower_net` constructs the IEEE‑123 feeder, injects branch parameters and attaches PV, SVC and battery devices. |
-| **Surrogate model pipeline** | `main.py` generates power‑flow samples, trains a PyTorch surrogate model, logs loss curves and error histograms. |
 | **Training callbacks** | Custom Stable‑Baselines3 callbacks stream episode reward, volt‑dev, losses & SOC to CSV + TensorBoard. |
 
 ---
