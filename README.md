@@ -52,8 +52,7 @@ data/
 └─ pv-data/IEEE123/
 ```
 
-(The data download link is：[LINK](https://drive.google.com/file/d/1-q9oLUa-WNJggB0y5h_SorzMKEeUT8rG/view?usp=drive_link)  
- Modify paths in `env_config` if required.)
+(The data download link is：[LINK](https://drive.google.com/file/d/1-q9oLUa-WNJggB0y5h_SorzMKEeUT8rG/view?usp=drive_link).  Modify paths in `env_config` if required.)
 
 ---
 
