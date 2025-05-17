@@ -20,21 +20,21 @@ Agents learn to coordinate PV inverters, static var compensators (SVCs) and 
 
 ## 🛠️ Installation
 
-```bash
-# 1. clone
-git clone [https://github.com/<your‑username>/vvc‑drl‑env.git](https://github.com/zzzyyykkkkkkk/Env-for-VVC.git)
-cd vvc‑drl‑env
+1. Install [Anaconda](https://www.anaconda.com/products/individual#Downloads).
+2. After cloning or downloading this repository, assure that the current directory is `[your own parent path]/MAPDN`.
+3. If you are on Linux OS (e.g. Ubuntu), please execute the following command. 
+   ```bash
+   conda env create -f environment.yml
+   ```
+   If you are on Windows OS, please execute the following command. **Note that please launch the Anaconda shell by the permission of Administration.**
+   ```bash
+   conda env create -f environment_win.yml
+   ```
+4. Activate the installed virtual environment using the following command.
+    ```bash
+    conda activate mapdn
+    ```
 
-# 2. create & activate virtualenv (Python ≥ 3.8)
-python -m venv venv
-# Linux / macOS
-source venv/bin/activate
-# Windows
-venv\Scripts\activate
-
-# 3. install dependencies
-pip install -r requirements.txt
-````
 
 ### Core Python packages
 
