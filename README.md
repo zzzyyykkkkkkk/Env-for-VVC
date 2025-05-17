@@ -22,7 +22,7 @@ Agents learn to coordinate PV inverters, static var compensators (SVCs) and 
 
 ```bash
 # 1. clone
-git clone https://github.com/<your‑username>/vvc‑drl‑env.git
+git clone [https://github.com/<your‑username>/vvc‑drl‑env.git](https://github.com/zzzyyykkkkkkk/Env-for-VVC.git)
 cd vvc‑drl‑env
 
 # 2. create & activate virtualenv (Python ≥ 3.8)
