@@ -1,4 +1,4 @@
-name: vvc-drl-env
+name: VVC_Env
 channels:
   - defaults
   - conda-forge
