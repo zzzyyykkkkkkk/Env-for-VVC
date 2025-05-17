@@ -61,13 +61,12 @@ data/
 
 ```
 .
-├── data.py                    # Data Storage
+├── data.py                    # Data Storage(You need to download and place it in this location)
 ├── data_manager.py            # time‑series loader / pre‑processor
 ├── pandapower_net.py          # IEEE‑123 builder
 ├── env/
-│   ├── env422.py              # standard DRL Gym env
-│   ├── Safeenv512.py          # env with safety layer
-│   └── BatteryUnit.py         # battery model
+│   ├── env422.py              # standard DRL Gym env   
+│   └── Safeenv512.py          # env with safety layer
 ├── train.py                   # PPO training example
 ├── test.py                    # evaluation script
 ├── requirements.txt
