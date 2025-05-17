@@ -4,6 +4,8 @@
 A Python toolkit built on OpenAI Gym for **active voltage regulation** in the IEEE‑123 distribution feeder.  
 Agents learn to coordinate PV inverters, static var compensators (SVCs) and battery storage so that all bus voltages stay within limits while network losses are minimised.
 
+The Safeenv512.py module defines a custom Gym environment named Safe_PowerNetEnv_IEEE123, designed for safe reinforcement learning in reactive power and voltage control within the IEEE-123 bus distribution network. This environment integrates photovoltaic (PV) systems, static VAR compensators (SVCs), and battery energy storage systems (BESS), with additional emphasis on safety constraints and optimization-based action correction mechanisms.
+
 ---
 
 ## ✨ Key Features
