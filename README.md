@@ -1,5 +1,5 @@
 
-# Deep Reinforcement Learning Environment for Voltage Control in Distribution Networks
+# Safe Deep Reinforcement Learning Environment for Voltage Control in Distribution Networks
 
 A Python toolkit built on OpenAI Gym for **active voltage regulation** in the IEEE‑123 distribution feeder.  
 Agents learn to coordinate PV inverters, static var compensators (SVCs) and battery storage so that all bus voltages stay within limits while network losses are minimised.
