@@ -40,15 +40,11 @@ class BatteryUnit():
         assert 0.0 < self.discharge_efficiency <= 1.0, "放电效率必须在 (0,1] 之间"
 
     def reset(self, initial_soc: float = None):
-        """
-        重置电池状态。
-        Args:
-            initial_soc (float, optional): 重置后的 SOC，如果为 None 则保持当前 soc。
-        """
-        initial_soc = self.initial_soc
-        if initial_soc is not None:
-            assert 0.0 <= initial_soc <= 1.0, "initial_soc 必须在 [0,1] 之间"
-            self.soc = initial_soc
+        """重置电池状态。"""
+        if initial_soc is None:
+            initial_soc = self.initial_soc
+        assert 0.0 <= initial_soc <= 1.0, "initial_soc 必须在 [0,1] 之间"
+        self.soc = initial_soc
 
     def get_state(self) -> float:
         """
@@ -72,22 +68,20 @@ class BatteryUnit():
         # 限幅
         action = max(-1.0, min(1.0, action))
         if action >= 0:
-            # 充电
-            target_power = self.max_charge_kw
-            energy_in = target_power * dt_h * self.charge_efficiency  # 考虑效率后的入库能量（kWh）
+            # 充电功率按动作比例缩放
+            power_kw = action * self.max_charge_kw
+            energy_in = power_kw * dt_h * self.charge_efficiency
             max_energy = (1.0 - self.soc) * self.capacity_kwh
             energy_stored = min(energy_in, max_energy)
             actual_power = energy_stored / (dt_h * self.charge_efficiency)
-            # 更新 SOC
             self.soc += energy_stored / self.capacity_kwh
         else:
             # 放电
-            target_power = self.max_discharge_kw
-            energy_out = -target_power * dt_h / self.discharge_efficiency  # 考虑效率后的出库能量（kWh）
+            power_kw = -action * self.max_discharge_kw
+            energy_out = power_kw * dt_h / self.discharge_efficiency
             max_energy = self.soc * self.capacity_kwh
             energy_drawn = min(energy_out, max_energy)
-            actual_power = - (energy_drawn * self.discharge_efficiency) / dt_h
-            # 更新 SOC
+            actual_power = -(energy_drawn * self.discharge_efficiency) / dt_h
             self.soc -= energy_drawn / self.capacity_kwh
 
         # 保证边界
